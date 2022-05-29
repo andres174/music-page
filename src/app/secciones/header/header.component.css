@@ -1,8 +1,9 @@
 #fondo-header{
     
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(1,200,0,1) 100%);
-    padding: 2em;
+    /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(1,200,0,1) 100%); */
+    padding: 1.5em;
+    margin-top: 0;
     
 }
 .glow-on-hover {
@@ -20,7 +21,7 @@
 
 .glow-on-hover:before {
     content: '';
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(1,200,0,1) 100%);
+    background: linear-gradient(90deg, rgba(254,8,97,1) 0%, rgba(179,6,68,1) 13%, rgba(127,4,48,1) 22%, rgba(87,3,33,1) 29%, rgba(72,14,55,1) 71%, rgba(111,22,84,1) 79%, rgba(135,27,102,1) 84%, rgba(164,33,124,1) 90%, rgba(212,42,161,1) 100%);
     position: absolute;
     top: -2px;
     left:-2px;
