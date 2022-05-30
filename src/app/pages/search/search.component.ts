@@ -9,8 +9,7 @@ import { SearchService } from 'src/app/servicios/search.service';
 export class SearchComponent implements OnInit {
 
   busqueda:Array<any> = [];
-  /* idArtist:any; */
-  artist!:object;
+  infoArtist:boolean = false;
 
   constructor(private search:SearchService) { }
 
@@ -23,6 +22,8 @@ export class SearchComponent implements OnInit {
     this.search.getMusic(name.value).subscribe({
       next:(s:any)=>{
         this.busqueda = s.data;
+        this.infoArtist = true;
+
         
       },
       error: (e)=>{

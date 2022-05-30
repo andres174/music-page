@@ -9,14 +9,22 @@
       </div>
     </div>
 
-    <div style="width: 80%; text-align: center; margin: auto">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col" *ngFor="let items of busqueda">
-          <div class="card h-100">
-            <img src="{{ items.album.cover_big }}" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">{{ items.title }}</h5>
-              <audio src="{{ items.preview }}" controls="controls" type="audio/mpeg" preload="preload"></audio>
+    <div>
+      <div class="card text-center" style="width: 18rem; margin: auto;  margin-bottom: 50px;" *ngIf="infoArtist">
+        <img src="{{busqueda[0].artist.picture_big}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">{{busqueda[0].artist.name}}</p>
+        </div>
+      </div>
+      <div style="width: 80%; text-align: center; margin: auto">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col" *ngFor="let items of busqueda">
+            <div class="card h-100">
+              <img src="{{ items.album.cover_big }}" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">{{ items.title }}</h5>
+                <audio src="{{ items.preview }}" controls="controls" type="audio/mpeg" preload="preload"></audio>
+              </div>
             </div>
           </div>
         </div>
