@@ -12,6 +12,9 @@ import { InfoComponent } from './pages/info/info.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { HomeComponent } from './pages/home/home.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FilterOnePipe } from './pipes/filter-one.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +25,13 @@ import { HomeComponent } from './pages/home/home.component';
     GenresComponent,
     InfoComponent,
     AboutUsComponent,
-    HomeComponent
+    HomeComponent,
+    FilterOnePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
