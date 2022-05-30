@@ -1,13 +1,26 @@
-<div style=" height: 100vh;">
-  <div class="d-flex justify-content-center">
-    <div class="input-group" id="input-buscar">
-      <input type="text" #buscar class="form-control" placeholder="Busca tu artista favorito...">
-      <button class="btn btn-outline-secondary btn-dark text-white" (click)="getMusic(buscar)"
-        type="button">Buscar</button>
+<div style=" height: 80vh" class="parent">
+  <div class="child ">
+    <div class="d-flex justify-content-center">
+      <div class="input-group" id="input-buscar">
+        <input type="text" #buscar class="form-control" placeholder="Busca tu artista favorito..." />
+        <button class="btn btn-outline-secondary btn-dark text-white" (click)="getMusic(buscar)" type="button">
+          Buscar
+        </button>
+      </div>
     </div>
-  </div>
 
-  <div *ngFor="let item of busqueda">
-    {{item.artist.id}}
+    <div style="width: 80%; text-align: center; margin: auto">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let items of busqueda">
+          <div class="card h-100">
+            <img src="{{ items.album.cover_big }}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ items.title }}</h5>
+              <audio src="{{ items.preview }}" controls="controls" type="audio/mpeg" preload="preload"></audio>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

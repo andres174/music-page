@@ -1,5 +1,19 @@
 #input-buscar{
-    width: 35%;
+    width: 50%;
     margin: 3rem;
     /* background-color: aqua; */
 }
+/* .parent{
+    width:100%;
+    min-height:20em;
+    float:left;
+    position:relative;
+    overflow:hidden;
+ } */
+ 
+/*  .child{
+    width:30%;
+    position:absolute;
+    top:0;
+    bottom:0;
+ } */
