@@ -13,7 +13,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { HomeComponent } from './pages/home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FilterOnePipe } from './pipes/filter-one.pipe';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { FilterOnePipe } from './pipes/filter-one.pipe';
     InfoComponent,
     AboutUsComponent,
     HomeComponent,
-    FilterOnePipe
+
   ],
   imports: [
     BrowserModule,

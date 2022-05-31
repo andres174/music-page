@@ -9,21 +9,29 @@ import { SearchService } from 'src/app/servicios/search.service';
 export class SearchComponent implements OnInit {
 
   busqueda:Array<any> = [];
+  album:any;
+  track:any;
   infoArtist:boolean = false;
 
   constructor(private search:SearchService) { }
 
   ngOnInit(): void {
-    //let fondo:string = ["background: rgb(254,8,97)", "background: linear-gradient(90deg, rgba(254,8,97,1) 0%, rgba(179,6,68,1) 13%, rgba(127,4,48,1) 22%, rgba(87,3,33,1) 29%, rgba(72,14,55,1) 71%, rgba(111,22,84,1) 79%, rgba(135,27,102,1) 84%, rgba(164,33,124,1) 90%, rgba(212,42,161,1) 100%);"]
+    this.getMusic("twice")
    }
 
 
-  getMusic(name:any){
-    this.search.getMusic(name.value).subscribe({
+   getMusic(name:any){
+    let d;
+    if(name.value){
+      d=name.value;
+    } else{
+      d=name;
+    }
+      this.search.getMusic(d).subscribe({
       next:(s:any)=>{
         this.busqueda = s.data;
         this.infoArtist = true;
-
+        this.getAlbumforartist(this.busqueda[0].artist.id);
         
       },
       error: (e)=>{
@@ -31,6 +39,33 @@ export class SearchComponent implements OnInit {
       }
     })
 
+  }
+
+  getAlbumforartist(idartista:number){
+    this.search.getAlbumForArtist(idartista).subscribe({
+      next: (s) =>{
+       this.album=s.data;
+       //this.getTrack(this.album.id);
+      },
+      error: (e)=>{
+        debugger
+      },
+
+    })
+  }
+
+
+  getTrack(id:number){
+    this.search.getTrackAlbum(id).subscribe({
+      next: (s) =>{
+        debugger
+       this.track=s.data;
+       debugger
+       },
+       error: (e)=>{
+         debugger
+       },
+    })
   }
 
   

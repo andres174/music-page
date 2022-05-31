@@ -8,7 +8,21 @@ export class SearchService {
 
   constructor(private http:HttpClient) { }
 
-  getMusic(name:string){
-    return this.http.get<any>('https://api.deezer.com/search?q='+ name)
+  apiURL="https://api.deezer.com/"; 
+
+  getMusic(nombre:string){
+    return this.http.get<any>(this.apiURL+"search?q="+nombre);
+  }
+
+  getGenero(){
+    return this.http.get<any>(this.apiURL+"genre");
+  }
+
+  getAlbumForArtist(idArtista:number){
+    return this.http.get<any>(this.apiURL+"artist/"+idArtista+"/albums");
+  }
+  getTrackAlbum(idalbum:number){
+  
+    return this.http.get<any>(this.apiURL+"album/"+idalbum+"/tracks");
   }
 }
