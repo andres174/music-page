@@ -10,7 +10,7 @@ export class SearchComponent implements OnInit {
 
   busqueda:Array<any> = [];
   album:any;
-  track:any;
+  /* track:any; */
   infoArtist:boolean = false;
 
   constructor(private search:SearchService) { }
@@ -55,7 +55,7 @@ export class SearchComponent implements OnInit {
   }
 
 
-  getTrack(id:number){
+  /* getTrack(id:number){
     this.search.getTrackAlbum(id).subscribe({
       next: (s) =>{
         debugger
@@ -66,7 +66,7 @@ export class SearchComponent implements OnInit {
          debugger
        },
     })
-  }
+  } */
 
   
   

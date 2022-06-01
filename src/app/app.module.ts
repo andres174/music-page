@@ -13,6 +13,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { HomeComponent } from './pages/home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './component/card/card.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     InfoComponent,
     AboutUsComponent,
     HomeComponent,
+    CardComponent,
 
   ],
   imports: [
