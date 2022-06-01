@@ -11,10 +11,13 @@
 
     <div>
       <div class="card text-center" style="width: 18rem; margin: auto;  margin-bottom: 50px;" *ngIf="infoArtist">
-        <img src="{{busqueda[0].artist.picture_big}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">{{busqueda[0].artist.name}}</p>
-        </div>
+        
+        <a href="{{busqueda[0].artist.link}}" target="_blank" rel="noopener noreferrer">
+          <img src="{{busqueda[0].artist.picture_big}}" class="card-img-top" alt="...">
+        </a>
+          <div class="card-body">
+            <p class="card-text">{{busqueda[0].artist.name}}</p>
+          </div>
       </div>
       <div style="width: 80%; text-align: center; margin: auto">
         <div class="row row-cols-1 row-cols-md-3 g-4">
